@@ -89,5 +89,20 @@ for (country of countries){
     }
 }
 
+let bannedCities=[
+    "Gustavia,BL",//esta ciudad no existe
+    "Willemstad,CW",//esta tampoco
+    "Laayoune / El Aaiun,EH"//Esta tiene una barra
+]
+
+matching=matching.filter((m)=>{
+    return bannedCities.indexOf(m)<0
+})
+
+//Agrego las ciudades de Argentina
+let argCities = owm.filter((city)=>city.country=="AR").map((city)=>city.name+",AR")
+matching=[].concat(argCities,matching)
+
+//Escribo a disco
 fs.writeFileSync("./matched-cities.json",JSON.stringify(matching,null,2),"utf-8")
 fs.writeFileSync("./unmatched-cities.json",JSON.stringify(notMatching,null,2),"utf-8")
