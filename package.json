@@ -1,0 +1,11 @@
+{
+  "name": "clima-cities",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts":{
+    "start":"node index.js"
+  },
+  "repository": "http://github.com/cajosaso/clima-cities",
+  "author": "jisbruzzi <jose.sbru@gmail.com>",
+  "license": "MIT"
+}
